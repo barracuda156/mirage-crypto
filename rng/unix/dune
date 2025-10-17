@@ -21,8 +21,9 @@
  (foreign_stubs
   (language c)
   (include_dirs ../../src/native)
-  (names mc_getrandom_stubs))
- (c_library_flags
+  (names mc_getrandom_stubs)
+  (c_flags (-isystem @PREFIX@/include/LegacySupport)))
+ (c_library_flags -lMacportsLegacySupport
   (:include rng_c_flags.sexp)))
 
 (env
